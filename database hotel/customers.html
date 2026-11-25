@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customers | MTI Hotel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="customers-page">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <span>🏨</span>
+      <div>
+        <h1>MTI HOTEL</h1>
+        <small>Hotel Reservation System</small>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <a href="home.html">🏠 Home</a>
+      <a href="customers.html" class="active">👤 Customers</a>
+      <a href="reservations.html">📅 Reservations</a>
+      <a href="rooms.html">🛏️ Rooms</a>
+      <a href="payments.html">💳 Payments</a>
+    </nav>
+  </aside>
+
+  <main class="main customers-main">
+
+    <header class="customers-header">
+      <div>
+        <span class="page-label">HOTEL MANAGEMENT</span>
+        <h2>Customer Management</h2>
+        <p>Manage and organize your hotel guests.</p>
+      </div>
+    </header>
+
+    <section class="customer-stats">
+      <div class="customer-stat">
+        <span>👥</span>
+        <div>
+          <p>Total Customers</p>
+          <h3 id="total-customers">0</h3>
+        </div>
+      </div>
+
+      <div class="customer-stat">
+        <span>✨</span>
+        <div>
+          <p>New This Month</p>
+          <h3 id="new-customers">0</h3>
+        </div>
+      </div>
+
+      <div class="customer-stat">
+        <span>🔎</span>
+        <div>
+          <p>Search Results</p>
+          <h3 id="search-results">0</h3>
+        </div>
+      </div>
+    </section>
+
+    <section class="customer-panel add-panel">
+      <div class="section-heading">
+        <div>
+          <h3 id="form-title">Add New Customer</h3>
+          <p>Enter the customer information below.</p>
+        </div>
+      </div>
+
+      <form id="customer-form">
+        <input type="text" id="name" placeholder="Full Name" required>
+        <input type="tel" id="phone" placeholder="Phone Number" required>
+        <input type="email" id="email" placeholder="Email Address">
+        <input type="text" id="nationality" placeholder="Nationality" required>
+
+        <div class="form-actions">
+          <button type="submit" id="submit-button">+ Add Customer</button>
+          <button type="button" id="cancel-edit" hidden>Cancel</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="customer-panel customers-list">
+      <div class="section-heading list-heading">
+        <div>
+          <h3>All Customers</h3>
+          <p>View and manage registered customers.</p>
+        </div>
+        <input type="search" id="search" placeholder="⌕ Search customers...">
+      </div>
+
+      <div class="table-container">
+        <table class="customers-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Phone</th>
+              <th>Email</th>
+              <th>Nationality</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="customers-body"></tbody>
+        </table>
+      </div>
+
+      <p id="table-message" class="table-message"></p>
+    </section>
+
+  </main>
+
+  <script src="customers.js"></script>
+</body>
+</html>

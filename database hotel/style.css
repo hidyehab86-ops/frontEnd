@@ -1,0 +1,312 @@
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body {
+  display:flex;
+  min-height:100vh;
+  font-family:Arial,sans-serif;
+  color:#1f2937;
+  background:linear-gradient(rgba(255,255,255,.3),rgba(255,255,255,.3)),url("images/hotel-bg.jpg") center/cover fixed;
+}
+
+.home-page,.customers-page {
+  height:100vh;
+  overflow:hidden;
+}
+
+.sidebar {
+  width:250px;
+  min-width:250px;
+  height:100vh;
+  padding:24px 16px;
+  background:rgba(255,255,255,.92);
+}
+
+.brand {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:30px;
+}
+
+.brand span {font-size:32px}
+.brand h1 {font-size:20px;color:#172b46}
+.brand small {color:#cd1b1b}
+
+.nav a {
+  display:block;
+  padding:14px 16px;
+  margin-bottom:10px;
+  border-radius:12px;
+  background:#f3f5f7;
+  color:#172b46;
+  text-decoration:none;
+  font-weight:bold;
+  transition:.25s;
+}
+
+.nav a:hover {background:#e5e9ef;transform:translateX(5px)}
+.nav a.active {background:#172b46;color:white}
+
+.main {
+  flex:1;
+  min-width:0;
+  height:100vh;
+  padding:22px;
+}
+
+.home-page .main {display:flex}
+
+.facilities-section {
+  width:100%;
+  height:100%;
+  padding:25px;
+  background:transparent;
+}
+
+
+.facilities-header {
+  text-align:center;
+  margin-bottom:24px;
+}
+
+.facilities-header h2 {
+  margin-bottom:10px;
+  color:#172b46;
+  font-size:30px;
+}
+
+.facilities-header p {color:#ffffff;font-size:16px}
+
+.facilities-grid {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
+
+.facility-card {
+  display:flex;
+  align-items:center;
+  gap:18px;
+  min-height:205px;
+  padding:14px;
+  overflow:hidden;
+  border:1px solid #e5e9ef;
+  border-radius:16px;
+  background:rgba(255,255,255,.94);
+  box-shadow:0 4px 15px rgba(23,43,70,.08);
+  transition:.3s;
+}
+
+.facility-card:hover {
+  transform:translateY(-5px);
+  border-color:#c5a15a;
+}
+
+.facility-card img {
+  width:150px;
+  height:175px;
+  object-fit:cover;
+  border-radius:12px;
+}
+
+.facility-info {flex:1}
+.facility-icon {font-size:25px}
+.facility-info h3 {margin:8px 0;color:#172b46;font-size:20px}
+.facility-info p {color:#64748b;font-size:14px;line-height:1.6}
+
+.customers-page .main {
+  display:flex;
+  flex-direction:column;
+  gap:13px;
+  padding:18px 24px;
+}
+
+.customers-header {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  min-height:75px;
+}
+
+.page-label {
+  color:#b08d46;
+  font-size:11px;
+  font-weight:bold;
+  letter-spacing:2px;
+}
+
+.customers-header h2 {margin:5px 0;color:#172b46;font-size:27px}
+.customers-header p,.section-heading p {color:#050505;font-size:12px}
+
+
+.customer-stats {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+
+.customer-stat {
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:12px 18px;
+  border:1px solid rgba(197,161,90,.35);
+  border-radius:14px;
+  background:rgba(255,255,255,.88);
+  backdrop-filter:blur(5px);
+}
+
+.customer-stat span {
+  display:grid;
+  place-items:center;
+  width:45px;
+  height:45px;
+  border-radius:12px;
+  background:#f5f0e6;
+  font-size:21px;
+}
+
+.customer-stat p {margin-bottom:4px;color:#64748b;font-size:12px}
+.customer-stat h3 {color:#172b46;font-size:24px}
+
+.customer-panel {
+  padding:15px 18px;
+  border:1px solid rgba(255,255,255,.7);
+  border-radius:15px;
+  background:rgba(255,255,255,.86);
+  backdrop-filter:blur(7px);
+  box-shadow:0 4px 15px rgba(23,43,70,.07);
+}
+
+.section-heading {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:12px;
+}
+
+.section-heading h3 {margin-bottom:4px;color:#172b46;font-size:17px}
+
+#customer-form {
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr)) auto;
+  gap:10px;
+}
+
+#customer-form input,#search {
+  width:100%;
+  min-width:0;
+  height:40px;
+  padding:0 11px;
+  border:1px solid #d9dfe7;
+  border-radius:9px;
+  background:rgba(255,255,255,.95);
+  color:#172b46;
+  font-size:12px;
+}
+
+#customer-form input:focus,#search:focus {outline:none;border-color:#c5a15a}
+
+.form-actions {display:flex;gap:6px}
+
+.form-actions button,.actions button {
+  border:0;
+  border-radius:8px;
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.form-actions button {
+  height:40px;
+  padding:0 13px;
+  background:#172b46;
+  font-size:11px;
+  white-space:nowrap;
+}
+
+.form-actions button:hover {background:#263f60}
+#cancel-edit {background:#64748b}
+[hidden] {display:none!important}
+
+.customers-list {
+  display:flex;
+  flex:1;
+  flex-direction:column;
+  min-height:0;
+}
+
+#search {width:240px}
+
+.table-container {flex:1;min-height:0;overflow:auto}
+
+.customers-table {
+  width:100%;
+  border-collapse:collapse;
+  table-layout:auto;
+}
+
+.customers-table th {
+  position:sticky;
+  top:0;
+  padding:11px 8px;
+  background:#f0f2f5;
+  color:#172b46;
+  font-size:11px;
+  text-align:left;
+}
+
+.customers-table td {
+  padding:10px 8px;
+  border-bottom:1px solid #e5e9ef;
+  color:#475569;
+  font-size:11px;
+  white-space:nowrap;
+}
+
+.customers-table th:last-child,.customers-table td:last-child {width:150px}
+.customers-table tbody tr:hover {background:rgba(245,240,230,.7)}
+
+.actions button {
+  padding:7px 10px;
+  font-size:11px;
+  white-space:nowrap;
+}
+.actions .delete-button{margin-left:8px;}
+
+.edit-button {background:#c5a15a}
+.delete-button {background:#b45353}
+.edit-button:hover {background:#a98643}
+.delete-button:hover {background:#933c3c}
+
+.table-message {margin-top:8px;color:#64748b;font-size:11px}
+
+@media(max-width:1000px) {
+  #customer-form {grid-template-columns:repeat(2,minmax(0,1fr))}
+  .form-actions {grid-column:span 2}
+  .facility-card img {width:120px}
+}
+
+@media(max-width:700px) {
+  .home-page,.customers-page {height:auto;min-height:100vh;overflow:auto}
+  body {flex-direction:column}
+  .sidebar {width:100%;min-width:0;height:auto}
+  .main {height:auto}
+  .facilities-grid,.customer-stats {grid-template-columns:1fr}
+  .facilities-section {height:auto}
+  .customers-list {min-height:250px}
+  .customers-table {min-width:750px}
+}
+
+@media(max-width:480px) {
+  #customer-form {grid-template-columns:1fr}
+  .form-actions {grid-column:auto}
+  .list-heading {align-items:flex-start;flex-direction:column;gap:10px}
+  #search {width:100%}
+  .facility-card img {width:105px;height:125px}
+}
