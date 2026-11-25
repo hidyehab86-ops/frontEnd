@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservations | MTI Hotel</title>
+    <link rel="stylesheet" href="reservation.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- القائمة الجانبية (مطابقة لتصميمك) -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>🏨 MTI HOTEL</h2>
+                <p>Hotel Reservation System</p>
+            </div>
+            <nav class="menu">
+                <a href="home.html" class="menu-item">🏠 Home</a>
+                <a href="customers.html" class="menu-item">👥 Customers</a>
+                <a href="reservations.html" class="menu-item active">📅 Reservations</a>
+                <a href="rooms.html" class="menu-item">🛏️ Rooms</a>
+                <a href="payments.html" class="menu-item">💳 Payments</a>
+            </nav>
+        </aside>
+
+        <!-- المحتوى الرئيسي -->
+        <main class="main-content">
+            <header class="page-header">
+                <h1>Manage Reservations</h1>
+                <p>Add, view, edit, or cancel hotel room reservations.</p>
+            </header>
+
+            <!-- كروت الأعداد (Stats) -->
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <h3>Total Reservations</h3>
+                    <p id="total-res">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Available Rooms</h3>
+                    <p id="available-rooms">20</p>
+                </div>
+            </section>
+
+            <!-- فورم إضافة / تعديل حجز -->
+            <section class="form-section">
+                <h2 id="form-title">New Reservation</h2>
+                <form id="reservation-form">
+                    <input type="hidden" id="edit-index" value="-1">
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="customer-name">Customer Name</label>
+                            <input type="text" id="customer-name" required placeholder="e.g., Ahmed Ali">
+                        </div>
+                        <div class="form-group">
+                            <label for="room-number">Room Number</label>
+                            <input type="number" id="room-number" required placeholder="e.g., 101" min="100" max="500">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="check-in">Check-In Date</label>
+                            <input type="date" id="check-in" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="check-out">Check-Out Date</label>
+                            <input type="date" id="check-out" required>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" id="submit-btn" class="btn-primary">Confirm Reservation</button>
+                        <button type="button" id="cancel-edit-btn" class="btn-secondary" style="display: none;">Cancel Edit</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- جدول عرض الحجوزات -->
+            <section class="table-section">
+                <h2>Current Reservations</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Customer Name</th>
+                            <th>Room #</th>
+                            <th>Check-In</th>
+                            <th>Check-Out</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="reservations-table-body">
+                        <!-- البيانات هتظهر هنا بالجافا سكريبت -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <script src="reservations.js"></script>
+</body>
+</html>
